@@ -1,0 +1,17 @@
+# File di dati pesanti (grafi, modelli) - vanno su Drive, non in Git
+dati/*.graphml
+dati/modelli_salvati/*.json
+dati/modelli_salvati/*.joblib
+
+# Output generati a runtime
+output/*.png
+output/*.txt
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.ipynb_checkpoints/
+
+# Colab
+drive/
