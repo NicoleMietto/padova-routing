@@ -6,6 +6,12 @@ Fischer 2023 / Cassis, Karrenbauer, Nusser, Rinaldi 2025) per il calcolo
 del negative-weight single-source shortest path.
 
 Repo originale: https://github.com/PaoloLRinaldi/negative_weight_SSSP
+Licenza del codice originale: Creative Commons Attribution 4.0 International
+(CC-BY 4.0) — https://creativecommons.org/licenses/by/4.0/
+
+Questo modulo NON ridistribuisce il codice sorgente originale: lo clona e
+lo compila a runtime tramite compila_bcf(), trattandolo come una dipendenza
+esterna invocata da riga di comando (analogamente a una libreria di sistema).
 """
 
 import os

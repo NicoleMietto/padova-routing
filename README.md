@@ -42,6 +42,20 @@ padova-routing/
   quindi rigenerabili rilanciando le funzioni corrispondenti, ma comodi da
   salvare per non doverlo rifare ogni volta.
 
+## Attribuzioni e licenze di terze parti
+
+Questo progetto usa, come dipendenza esterna clonata a runtime (non ridistribuita
+nel repository), l'implementazione del seguente lavoro:
+
+> Alejandro Cassis, Andreas Karrenbauer, André Nusser, and Paolo Luigi Rinaldi.
+> **Algorithm Engineering of SSSP with Negative Edge Weights**.
+> 23rd International Symposium on Experimental Algorithms (SEA 2025).
+> Codice: https://github.com/PaoloLRinaldi/negative_weight_SSSP
+> Licenza: [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
+
+`src/bcf.py` clona ed esegue questo codice come strumento esterno (analogamente
+a una libreria), senza copiarne il codice sorgente in questo repository.
+
 ## Setup
 
 ### Su Google Colab (consigliato per la prima esecuzione)
