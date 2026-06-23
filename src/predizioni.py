@@ -6,7 +6,7 @@ con cache delle coordinate e calcolo vettorizzato della distanza haversine.
 
 Compatibile con qualunque modello che implementi predict(X) e
 (opzionalmente) feature_names_in_ — sia scikit-learn nativo, sia il
-WrapperXGBoost definito in modelli/base.py.
+WrapperXGBoost definito in modelli/pipeline_unificata.py.
 """
 
 import networkx as nx
