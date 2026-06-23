@@ -60,7 +60,7 @@ def compila_bcf(bcf_dir: str = "/content/negative_weight_SSSP") -> str:
                     content = "#include <chrono>\n" + content
                 with open(queries_path, "w") as f:
                     f.write(content)
-                    
+
         print("Compilo (build.sh usa cmake + make)...")
         subprocess.run(["bash", "build.sh"], cwd=bcf_dir, check=True)
         print(f"✅ Compilato: {bcf_bin}")
@@ -172,7 +172,7 @@ def esegui_bcf(
     )
 
     print(
-        f"  {algoritmo} OK: {len(phi)} potenziali | "
+        f"  {algoritmo} completato: {len(phi)} potenziali | "
         f"C++ Puro = {t_puro:.4f}s (I/O Python = {tempo_totale_python:.4f}s)"
     )
     return phi, t_puro
