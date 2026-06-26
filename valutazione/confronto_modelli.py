@@ -81,19 +81,10 @@ def confronta_modelli_runtime(
                 n_baseline = nodi_esplorati_baseline[nome]
                 riduzione_pct = (1 - n_sanato / n_baseline) * 100 if n_baseline > 0 else 0
                 
-                # Classificazione basata sulla distanza reale, non sul target
-                distanza = distanze_baseline[nome]
-                if distanza < 6000: # Meno di 10 minuti (se decimi di secondo)
-                    fascia_distanza = "1. Corto (<10 min)"
-                elif distanza < 18000: # Meno di 30 minuti
-                    fascia_distanza = "2. Medio (10-30 min)"
-                else:
-                    fascia_distanza = "3. Lungo (>30 min)"
-
                 risultati.append({
                     "modello": nome_modello,
                     "coppia": nome,
-                    "fascia": fascia_distanza,
+                    "fascia": fascia,
                     "riduzione_pct": riduzione_pct,
                     "n_negativi": n_neg,
                     "tempo_bcf_s": tempo_bcf_s,
@@ -225,7 +216,7 @@ def plot_confronto_modelli_aggregato(df_tidy: pd.DataFrame, output_path: str = "
     print(f"Grafico salvato come '{output_path}'")
 
 
-def plot_confronto_modelli_boxplot(df_tidy: pd.DataFrame, output_path: str = "confronto_modelli_boxplot.png"):
+def plot_confronto_modelli_boxplot(df_tidy: pd.DataFrame, output_path: str = "confronto_modelli_boxplot.png", y_limit: tuple = None):
     """
     Grafico tramite Boxplot: mostra Mediana, Quartili e Outlier (i "pallini").
     Perfetto per dati con altissima varianza dove la deviazione standard esplode.
@@ -251,6 +242,9 @@ def plot_confronto_modelli_boxplot(df_tidy: pd.DataFrame, output_path: str = "co
         palette="Set2",
         showfliers=True # Mostra gli outlier
     )
+
+    if y_limit is not None:
+        plt.ylim(y_limit)
 
     plt.axhline(0, color="black", linewidth=0.8, linestyle="--")
     plt.ylabel("Riduzione % nodi esplorati")
